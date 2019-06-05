@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   def create
     if params[:image]
       @post = Post.new()
+      @post.save
       @post.image_name = "#{@post.id}.jpg"
       image = params[:image]
       File.binwrite("public/food_images/#{@post.image_name}", image.read)
