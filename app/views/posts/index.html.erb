@@ -1,12 +1,9 @@
 <h1>投稿一覧</h1>
+<%= link_to("新規投稿", "/posts/new") %>
 <ul>
-  <li>
-    1
-  </li>
-  <li>
-    2
-  </li>
-  <li>
-    3
-  </li>
+  <%= @posts.each do |post| %>
+    <li>
+      <img src="<%= "/food_images/#{post.image_name}" %>">
+    </li>
+  <% end %>
 </ul>

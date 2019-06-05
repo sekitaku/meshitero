@@ -1,0 +1,6 @@
+<h1>新規投稿</h1>
+<%= link_to("投稿一覧", "/posts/index") %>
+<%= form_tag("/posts/create", {multipart: true}) do %>
+<input name="image" type="file">
+<input type="submit">
+<% end %>
