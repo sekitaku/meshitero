@@ -1,6 +1,13 @@
 <h1>新規投稿</h1>
 <%= link_to("投稿一覧", "/posts/index") %>
 <%= form_tag("/posts/create", {multipart: true}) do %>
+<p>種類</p>
+<%= radio_button 'radio', 'from' ,"1" %>外食
+<%= radio_button 'radio', 'from' ,"2" %>商品
+<%= radio_button 'radio', 'from' ,"3" %>自炊
+<p>店名or商品名</p>
+<input name="shop">
+<p>画像</p>
 <input name="image" type="file">
 <input type="submit">
 <% end %>
