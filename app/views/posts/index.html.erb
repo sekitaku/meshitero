@@ -3,7 +3,7 @@
 <ul>
   <% @posts.each do |post| %>
     <li>
-      <img src="<%= "/food_images/#{post.image_name}" %>">
+      <%= cl_image_tag("meshitero_food_images/#{post.image_name}", :crop => "fill", :width => 480, :height => 320, :format => "jpg") %>
     </li>
   <% end %>
 </ul>
