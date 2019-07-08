@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <header>
+      <div class="title">Meshitero</div>
+      <div class="option">
+        <ul>
+          <li><%= link_to("投稿一覧", "/posts/index") %></li>
+          <li><%= link_to("新規投稿", "/posts/new") %></li>
+        </ul>
+      </div>
+      <dib class="last"></div>
+    </header>
+    <div class="buff"></div>
     <h3><%= flash[:notice] %> </h3>
     <%= yield %>
   </body>

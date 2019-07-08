@@ -1,9 +1,10 @@
-<h1>投稿一覧</h1>
-<%= link_to("新規投稿", "/posts/new") %>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= cl_image_tag("meshitero_food_images/#{post.image_name}", :crop => "fill", :width => 480, :height => 320, :format => "jpg") %>
-    </li>
-  <% end %>
-</ul>
+<div class="contents">
+  <h1>投稿一覧</h1>
+  <ul class="post_images">
+    <% @posts.each do |post| %>
+      <li>
+        <%= cl_image_tag("meshitero_food_images/#{post.image_name}", :crop => "fill", :width => 480, :height => 320, :format => "jpg") %>
+      </li>
+    <% end %>
+  </ul>
+</div>
