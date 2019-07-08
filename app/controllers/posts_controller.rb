@@ -1,6 +1,3 @@
-require 'rubygems'
-require 'RMagick'
-
 class PostsController < ApplicationController
   def index
     @posts = Post.all
@@ -32,11 +29,6 @@ class PostsController < ApplicationController
       end
 
       begin
-      # 縦・横のピクセルを指定してリサイズ
-      #image = original.resize(width, height)
-      #image.write("public/food_images/#{@post.image_name}")
-      #image.destroy!
-      #imageをアップロード
       Cloudinary::Uploader.upload("public/food_images/#{@post.image_name}", :public_id => @post.image_name, :folder => "meshitero_food_images", :overwrite => true, :crop => "limit", :tags => "meshitero_foods", :width => 3000, :height => 2000)
       flash[:notice] = "画像をアップロードしました！！！！"
       File.delete("public/food_images/#{@post.image_name}")
